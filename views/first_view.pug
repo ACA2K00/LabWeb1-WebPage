@@ -1,0 +1,36 @@
+doctype html
+html
+   head
+      title WebAssembly C++ Tutorial 
+   body
+      p.greetings#people Hello there! This is a tutorial website for using WebAssembly in C++
+      div.
+        First you'll need to set up the Emscripten setup, follow the instructions of this website:
+      div.
+        https://emscripten.org/docs/getting_started/downloads.html
+
+      div.
+        Now with the environment set up, lets start the process.
+      div.
+        1. Let's make a basic "Hello World" script as the example below and save it as "hello.c"
+      div.
+        #include <stdio.h>
+        int main() {
+            printf("Hello World\n");
+            return 0;
+        }
+      div.
+        2. Now lets compile it in a console terminal window by using the following command: 
+        emcc hello.c -o hello.html
+      div.
+        Now you should have the following files in your source directory.
+      div.
+        The binary wasm module code (hello.wasm)
+      div.
+        A JavaScript file containing glue code to translate between the native C functions, and JavaScript/wasm (hello.js)
+      div.
+        An HTML file to load, compile, and instantiate your wasm code, and display its output in the browser (hello.html)
+      div.
+        Now load your HTML file into a browser to see how the application turned out!
+      div.
+        For further instructions see the following website: https://developer.mozilla.org/en-US/docs/WebAssembly/C_to_wasm
